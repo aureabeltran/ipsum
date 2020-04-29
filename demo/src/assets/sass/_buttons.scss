@@ -1,0 +1,108 @@
+.main-btn{
+    font-family: $main_font;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 42px;
+    position: relative;
+    text-decoration: none;
+    min-width: 150px;
+    min-height: 42px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 25px;
+    z-index: 2;
+    border-radius: 10px;
+    border: 1px solid;
+    span {
+        color: #fff;
+        z-index: 20;
+        font-family: $main_font;
+        font-weight: 100;
+    }
+    &::after {
+        content: "";
+        height: 100%;
+        right: 0%;
+        opacity: 1;
+        position: absolute;
+        top: 0px;
+        transition: .4s;
+        width: 100%;
+        z-index: -1;
+    }
+    &:hover{
+        color: #fff;
+        outline: 0px;
+        border: 1px solid;
+        &::after {
+            right: 0%;
+            transition: .4s;
+        }
+    }
+    &:focus{
+        outline: 0px;
+    }
+    &.orange-btn{
+        border-color: darken($main_orange, 10%);
+        background: darken($main_orange, 10%);
+        &:hover{
+            border-color: $main_orange;
+            &::after {
+                background: $main_orange;
+                border-color: $main_orange;
+            }
+        }
+    }
+    &.blue-btn{
+        background: darken($main_skyblue, 10%);
+        border-color: darken($main_skyblue, 10%);
+        &:hover{
+            border-color: $main_skyblue;
+            &::after {
+                background: $main_skyblue;
+                border-color: $main_skyblue;
+            }
+        }
+    }
+    &.bordered-btn{
+        background: transparent;
+        border-color: #fff;
+        border: 1px solid;
+        &:hover{
+            border-color: $main_skyblue;
+            &::after {
+                background: $main_skyblue;
+                border-color: $main_skyblue;
+            }
+        }
+    }
+    &.transparent-btn{
+        background-color: transparent;
+        border: 0px;
+        &:focus{
+            outline: 0px;
+        }
+    }
+    &.with-shadow{
+        box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+.no-button{
+    border: 0px;
+    background: transparent;
+    outline: 0px;
+    &:hover{
+        border: 0px;
+        outline: 0px;
+        box-shadow: none;
+    }
+    &:focus{
+        border: 0px;
+        outline: 0px;
+        box-shadow: none;
+    }
+}
